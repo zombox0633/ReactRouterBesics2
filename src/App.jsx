@@ -46,8 +46,9 @@ function App() {
             element={loggedIn? <Navigate to='/dashboard'/>:<Home login={handleLogin}/>}/>
             <Route path="/about"
             element={<About/>}/>
+            {/* caseSensitive คือการระบุ path อย่างเจาะจงว่าต้องเป็นรูปแบบนี้เท่านั้น เช่น  path="/contact ใช้ path="/Contact จะไม่สามารถเข้าได้ */}
             <Route path="/contact"
-            element={<Contact/>}/>
+            element={<Contact/>} caseSensitive/>
             {/* Navigate(นำทาง) เป็นเหมือนการสร้าง Route โดยใช้ตัว Navigate เป็น element และสามารถกำหนดเส้นทางไปต่อได้*/}
             {/* state={ข้อมูล} เป็นการส่งข้อมูลไปยัง path ที่ต้องการ to='/path ที่ต้องการ' */}
             {/* *2 เมือ loggedIn? *1 เป็นจริงจะทำการเช็คว่า loggedIn?*2 เป็นจริงหรือไม่ ถ้าจริงเข้าหน้า Dashboard.jsx ถ้าไม่ไปหน้า Home และส่งค่า state ไปด้วย */}
